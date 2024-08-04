@@ -1,8 +1,6 @@
 async function exampleCom(request) {
   const params = new URL(request.url).searchParams;
-  return fetch(params.get("proxy"), {
-    mode: "no-cors",
-  });
+  return fetch(params.get("proxy"));
 }
 
 self.addEventListener("fetch", function (e) {
