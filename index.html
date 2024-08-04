@@ -1,9 +1,9 @@
 <html>
   <head>
-    <title>Home</title>
     <script>
       if ("serviceWorker" in navigator) {
         window.addEventListener("load", () => {
+          console.log("Service Worker is supported");
           navigator.serviceWorker.register("/sw.js");
         });
       }
