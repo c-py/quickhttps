@@ -1,8 +1,8 @@
-async function exampleCom(request) {
+async function proxy(request) {
   const params = new URL(request.url).searchParams;
   return fetch(params.get("proxy"));
 }
 
 self.addEventListener("fetch", function (e) {
-  e.respondWith(exampleCom(e.request));
+  e.respondWith(proxy(e.request));
 });
