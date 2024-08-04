@@ -1,5 +1,7 @@
-self.addEventListener("fetch", function (e) {
-  console.log("fetch request : " + e.request.url);
-});
+async function exampleCom(request) {
+  return fetch("https://example.com");
+}
 
-console.log("test");
+self.addEventListener("fetch", function (e) {
+  e.respondWith(exampleCom(e.request));
+});
