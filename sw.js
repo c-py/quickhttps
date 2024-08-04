@@ -1,10 +1,6 @@
 async function exampleCom(request) {
-  return fetch("https://example.com", {
-    mode: "no-cors",
-    headers: {
-      "Content-Type": "text/html",
-    },
-  });
+  const params = new URL(request.url).searchParams;
+  return fetch(params.get("proxy"));
 }
 
 self.addEventListener("fetch", function (e) {
